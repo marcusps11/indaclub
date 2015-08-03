@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<%= form_tag events_path :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+</p>
+<% end %>
 
 <h1>Listing Events</h1>
 
@@ -27,5 +33,11 @@
 </table>
 
 <br>
+
+<% @events.each do |event| %>
+  <div class="event">
+    <h1 class="event-name"><%= link_to event.name, event %></h1>
+  </div>
+<% end %>
 
 <%= link_to 'New Event', new_event_path %>

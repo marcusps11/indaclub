@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <nav>
+    <ul>
+
+      <li><%= link_to "Event", events_path %></li>
+      <li><%= link_to "Add Event", new_event_path %></li>
+
+      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "Register", new_user_path %></li>
+
+      <li><%= link_to "Club", clubs_path %></li>
+      <li><%= link_to "New Club", new_club_path %></li>
+      
+    </ul>
+  </nav>
+</header>
+<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" } %>
 
 <%= yield %>
 
