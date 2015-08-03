@@ -4,8 +4,15 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-  @q = Person.ransack(params[:q])
-   @people = @q.result(distinct: true)
+   @q = Event.ransack(params[:q]) 
+   if params[:q].present?
+    @q = Event.ransack(params[:q]) 
+    @events = @q.result(district:true)
+  else
+    @events = Event.all 
+  end
+  
+
   end
 
   # GET /events/1

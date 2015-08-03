@@ -8,7 +8,7 @@ response = HTTParty.get(gigatools_url, query:{
   account: api_key
 
   #options
-  keyword: "Ibiza"
+  keyword: "London"
 
   events = response[0][1]
 
