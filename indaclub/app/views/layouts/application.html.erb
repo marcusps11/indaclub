@@ -10,6 +10,7 @@
 <header>
   <nav>
     <ul>
+    <% if logged_in? %>
 
       <li><%= link_to "Event", events_path %></li>
       <li><%= link_to "Add Event", new_event_path %></li>
@@ -19,11 +20,17 @@
 
       <li><%= link_to "Club", clubs_path %></li>
       <li><%= link_to "New Club", new_club_path %></li>
+
+      <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+
+      <li><%= link_to "Register", new_user_path %></li>
+      <li><%= submit_tag "Log in" %></li>
+      <% end %>
       
     </ul>
   </nav>
 </header>
-<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" } %>
 
 <%= yield %>
 

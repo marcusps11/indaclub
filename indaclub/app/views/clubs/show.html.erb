@@ -20,5 +20,9 @@
   <%= @club.image %>
 </p>
 
+<ul>
+ <%= render @club.events %>
+</ul>
+
 <%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %>
