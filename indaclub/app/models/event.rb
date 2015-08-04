@@ -1,17 +1,12 @@
 class Event < ActiveRecord::Base
-
+acts_as_votable
+  belongs_to :user
   belongs_to :club
-  has_many :attendees
   validates :name, presence:true
-  # validates :date, presence:true
+  validates :date, presence:true
 
-#   def self.search(search)
-#    if search
-#     find(:all, :conditions => ["name LIKE ?", "%#{params[:search}%"])
-#   else
-#     find(:all)
+  def score
+    self.get_upvotes.size
+  end
 
-#   end
-
-# end
 end

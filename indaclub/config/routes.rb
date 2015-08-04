@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   delete "/logout", to: "sessions#destroy"
 
-
+  resources :events do
+    member do
+      put "like", to: "events#upvote"
+    end
+  end
 
 end

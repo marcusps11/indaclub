@@ -22,7 +22,10 @@ result = get_api_result("Ibiza")
 json_result = JSON.parse(result)
 
 json_result[1].each do |event|
-  club = Club.find_or_create_by(name: event['venue'])
+  club = Club.where("LOWER(name) LIKE?", "%#{event["venue"].downcase}%").first
+  unless club.present?
+    club = Club.create(name: event['venue'])
+  end
   new_event = Event.create(name: event['event_owner'], club_id: club.id, date: event['eventdate'])
 end
 

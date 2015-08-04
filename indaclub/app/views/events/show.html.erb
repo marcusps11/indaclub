@@ -15,9 +15,11 @@
   <%= @event.ticketlink %>
 </p>
 
-<%= button_to 'Attend Event', attend_event_path(@event.id), :method => :post %>
+<%= link_to "Attending", like_event_path(@event), method: :put %> 
 
 
+<%= @event.score %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+
+<%= link_to 'Edit', edit_event_path(@event) %> 
 <%= link_to 'Back', events_path %>

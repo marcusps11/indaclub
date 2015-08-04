@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   helper_method :authenticate
+  helper_method :owns_event?
+
    def current_user
      @current_user ||= User.find(session[:user_id]) if session[:user_id]
    end
@@ -18,5 +20,14 @@ class ApplicationController < ActionController::Base
        redirect_to "/"
      end
    end
+
+   def authenticate_user(user)
+       if user != current_user
+         flash[:error] = "You are not authorized to do that."
+         redirect_to root_path
+       else 
+         true
+       end
+     end
   
 end

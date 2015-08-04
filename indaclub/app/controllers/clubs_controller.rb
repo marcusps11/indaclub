@@ -4,8 +4,14 @@ class ClubsController < ApplicationController
   # GET /clubs
 
   def index
+     @q = Club.ransack(params[:q]) 
+     if params[:q].present?
+      @q = Club.ransack(params[:q]) 
+      @clubs = @q.result(district:true)
+    else
     @clubs = Club.all
   end
+end
 
   # GET /clubs/1
   def show

@@ -15,17 +15,22 @@ class EventsController < ApplicationController
 
   end
 
+
   # GET /events/1
   def show
+
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    @event.liked_by @user
+    @event.votes_for.size
   end
 
   # GET /events/1/edit
   def edit
+    redirect_to root_path unless authenticate_user(@event.user)
   end
 
   # POST /events
@@ -70,5 +75,14 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :date, :ticketlink, :search)
     end
+
+    def upvote
+      @event = Event.find(params[:id])
+      @event.upvote_by current_user
+      redirect_to events_path
+    end
+
+
+
 end
 
