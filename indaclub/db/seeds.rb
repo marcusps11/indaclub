@@ -23,7 +23,7 @@ json_result = JSON.parse(result)
 
 json_result[1].each do |event|
   club = Club.find_or_create_by(name: event['venue'])
-  new_event = Event.create(name: event['venue'], club_id: club.id, date: event['eventdate'])
+  new_event = Event.create(name: event['event_owner'], club_id: club.id, date: event['eventdate'])
 end
 
 

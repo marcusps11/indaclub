@@ -15,7 +15,7 @@
   <%= @event.ticketlink %>
 </p>
 
-<strong>Attending</strong>
+<%= button_to 'Attend Event', attend_event_path(@event.id), :method => :post %>
 
 
 

@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 
-  belongs_to :user
   belongs_to :club
+  has_many :attendees
   validates :name, presence:true
   # validates :date, presence:true
 

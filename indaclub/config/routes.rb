@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  resources :events
   resources :clubs
+  resources :events
   resources :users
   resources :sessions, only: [:new, :create,:destroy]
   root "static#home"

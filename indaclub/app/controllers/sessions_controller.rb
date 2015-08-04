@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to events_path, notice: "logged in!"
+      redirect_to clubs_path, notice: "logged in!"
     else
      
      render "new"
