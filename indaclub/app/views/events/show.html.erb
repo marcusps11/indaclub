@@ -11,14 +11,16 @@
 </p>
 
 <p>
-  <strong>Ticketlink:</strong>
-  <%= @event.ticketlink %>
+  <strong>Venue:</strong>
+ <%= link_to @event.club.try(:name), @event.club %>
 </p>
 
 <%= link_to "Attending", like_event_path(@event), method: :put %> 
 
 
 <%= @event.score %>
+
+
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> 
