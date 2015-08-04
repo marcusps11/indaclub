@@ -20,5 +20,11 @@
   <%= @user.avatar %>
 </p>
 
+<% @user.find_voted_items.each do |item| %>
+  <%= link_to item.name, item %>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
