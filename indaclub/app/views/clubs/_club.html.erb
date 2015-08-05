@@ -1,11 +1,9 @@
 <ul class="club-details">
   <li><%= club.name %></li>
-  <li><%= club.location %></li>
-  <li><%= club.description %></li>
-  <li><%= club.image %></li>
   <li><%= link_to 'Show', club %></li>
+</ul>
   <% if current_user == club.user %>
   <li><%= link_to 'Edit', edit_club_path(club) %></li>
   <li><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-</ul>
-<% end %>
+  <% end %>
+

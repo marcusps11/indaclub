@@ -1,6 +1,6 @@
  <!DOCTYPE html>
-<html lang="en">
-<head>
+ <html lang="en">
+ <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,34 +13,46 @@
   <%= csrf_meta_tags %>
 </head>
 <header>
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><%= link_to "Home", root_path %></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active"><%= link_to "Register", new_user_path %></li>
-      <li class="has-dropdown">
-        <a href="#">Login</a>
-        <ul class="dropdown">
-          <li><%= link_to "Club", clubs_path %></li>
-          <li class="active"><%= link_to "Event", events_path %></li>
-        </ul>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Home", root_path %></h1>
       </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul>
-  </section>
-</nav>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if logged_in? %>
+        <li class="active"><%= link_to "Register", new_user_path %></li>
+        <li class="has-dropdown">
+          <a href="#">Login</a>
+          <ul class="dropdown">
+            <li><%= link_to "Club", clubs_path %></li>
+            <li class="active"><%= link_to "Event", events_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Register", new_user_path %></li>
+
+        <li><%= link_to "Club", clubs_path %></li>
+        <li><%= link_to "New Club", new_club_path %></li>
+
+        <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+
+        <li><%= link_to "Register", new_user_path %></li>
+        <li><%= submit_tag "Log in" %></li>
+        <% end %>
+
+      </ul>
+
+      <!-- Left Nav Section -->
+      
+    </section>
+  </nav>
 </header>
 
 <body>
