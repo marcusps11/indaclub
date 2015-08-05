@@ -14,20 +14,19 @@
 </div>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Ticketlink</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="club-list-titles">
+  <li>Name</li>
+  <li>Date</li>
+  <li>Ticketlink</li>
+  <li colspan="3"></li>
+</ul>
 
-  <tbody>
-   <%= render @events %>
- </tbody>
-</table>
+
+<div class="row" data-equalizer>
+ <%= render @events %>
+</div>
+
+
 
 <br>
 

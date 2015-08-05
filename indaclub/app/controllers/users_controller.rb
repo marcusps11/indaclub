@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+  redirect_to root_path unless authenticate_user(@user)
+
   end
 
   # GET /users/new
@@ -24,6 +26,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       redirect_to users_path
     else
       render:new
@@ -43,10 +46,14 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
+    if @user = current_user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
     end
+  else
+    redirect_to users_path
+  end
   end
 
   private

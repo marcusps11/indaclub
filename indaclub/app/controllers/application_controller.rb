@@ -29,5 +29,10 @@ class ApplicationController < ActionController::Base
          true
        end
      end
+
+     def log_in(user)
+         session[:user_id] = user.id
+       end
+     
   
 end
