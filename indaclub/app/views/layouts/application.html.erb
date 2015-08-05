@@ -1,38 +1,71 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Indaclub</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "" %>
+  </title>
+  <link rel="icon" type="browser.png" href="favicon-16x16.png" sizes="16x16" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 <header>
-  <nav>
-    <ul>
-    <% if logged_in? %>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Home", root_path %></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
-      <li><%= link_to "Event", events_path %></li>
-      <li><%= link_to "Add Event", new_event_path %></li>
-
-      <li><%= link_to "Users", users_path %></li>
-      <li><%= link_to "Register", new_user_path %></li>
-
-      <li><%= link_to "Club", clubs_path %></li>
-      <li><%= link_to "New Club", new_club_path %></li>
-
-      <%= link_to "Logout", logout_path, method: :delete %>
-      <% else %>
-
-      <li><%= link_to "Register", new_user_path %></li>
-      <li><%= submit_tag "Log in" %></li>
-      <% end %>
-      
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><%= link_to "Register", new_user_path %></li>
+      <li class="has-dropdown">
+        <a href="#">Login</a>
+        <ul class="dropdown">
+          <li><%= link_to "Club", clubs_path %></li>
+          <li class="active"><%= link_to "Event", events_path %></li>
+        </ul>
+      </li>
     </ul>
-  </nav>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+  </section>
+</nav>
 </header>
 
-<%= yield %>
+<body>
 
+  <main class="row">
+    <%= yield %>
+  </main>
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
-</html>
+</html> 

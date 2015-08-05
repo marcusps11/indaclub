@@ -1,12 +1,18 @@
+<div class="row">
+  <div class="large-12 columns">
+    <img id="cover-image" src="http://www.essentialibiza.com/ecms/wp-content/uploads/2013/07/Pukka-Up.jpg"><br><br>
+  </div>
+</div>
 
 
 <h1>Listing Events</h1>
 <div class="search">
-<%= search_form_for @q do |f| %>
-<%= f.text_field :name_cont, :placeholder => "Search" %>
-<div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+  <%= search_form_for @q do |f| %>
+  <%= f.text_field :name_cont, :placeholder => "Search" %>
+  <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
 </div>
+
 
 <table>
   <thead>
@@ -20,13 +26,13 @@
 
   <tbody>
    <%= render @events %>
-  </tbody>
+ </tbody>
 </table>
 
 <br>
 
- <% @events.each do |event| %>
- <% end %>
+<% @events.each do |event| %>
+<% end %>
 
 
 
