@@ -13,75 +13,50 @@
   <%= csrf_meta_tags %>
 </head>
 
-<div class="fixed">
-  <nav class="top-bar" data-topbar role="navigation">
-
-    <ul class="title-area">
-      <li class="name">
-      <h1><a href="/">InDaClub</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <li class="active"><a href="/users">Index</a></li>
-        <li class="has-dropdown">
-          <% if logged_in? %>
-          <a><%= current_user.try(:username) %></a>
-          <ul class="has-dropdown">
-            <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to "Clubs", clubs_path %></li>
-            <li><%= link_to "Events", events_path %></li>
-            <li class="active"><%= link_to "Logout", logout_path, method: "delete" %></li>
-          </ul>
-          <% else %>
-          <a>Register</a>
-          <ul class="dropdown">
-            <li><%= link_to "Login", login_path %></li>
-            <li><%= link_to "Sign Up", new_user_path %></li>
-          </ul>
-          <% end %>
+  <body>
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">InDaClub</a></h1>
         </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-    </section>
 
-  </nav>
-</div>
-
-
-
+      <section class="top-bar-section">
+        <ul class="right">
+          <% if current_user %>
+          <li><%= current_user.username %></li>
+          <li><%= link_to "Index", users_path %></li>
+          <% end %>
+          <li class="has-dropdown">
+            <a href="#">Account</a>
+            <ul class="dropdown">
+              <% if logged_in? %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Clubs", clubs_path %></li>
+              <li><%= link_to "Events", events_path %></li>
+              <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+              <% else %>
+              <li><%= link_to "Login", login_path %></li>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
 
         <!-- Left Nav Section -->
-
+        <ul class="left">
+        <li><%= link_to "Home", root_path %></li>
+        </ul>
       </section>
     </nav>
-  </header>
-
-  <body>
-
+  </div>
     <main class="row">
       <%= yield %>
     </main>
 
-    <footer class="row">
-      <div class="large-12 columns">
-        <hr>
-        <div class="row">
-          <div class="large-6 columns">
-            <p>© Copyright no one at all. Go to town.</p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <%=render "footer" %>
   </body>
   </html> 
 

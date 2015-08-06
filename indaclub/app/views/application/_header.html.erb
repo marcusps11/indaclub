@@ -1,0 +1,38 @@
+<div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">InDaClub</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <% if current_user %>
+        <li><%= current_user.username %></li>
+        <li><%= link_to "Index", users_path %></li>
+        <% end %>
+        <li class="has-dropdown">
+          <a href=" ">Account</a>
+          <ul class="dropdown">
+            <% if logged_in? %>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Clubs", clubs_path %></li>
+            <li><%= link_to "Events", events_path %></li>
+            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+            <% else %>
+            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+      <li><%= link_to "Home", root_path %></li>
+      </ul>
+    </section>
+  </nav>
+</div>
