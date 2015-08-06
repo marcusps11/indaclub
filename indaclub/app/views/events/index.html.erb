@@ -9,17 +9,12 @@
 <div class="search">
   <%= search_form_for @q do |f| %>
   <%= f.text_field :name_cont, :placeholder => "Check to see if your favourite DJ is playing" %>
-  <div class="actions"><%= f.submit "Search" %></div>
+  <div class="actions">
+  <button id="home_buttons" type="submit">Search</button></div>
   <% end %>
 </div>
 
 
-<ul class="club-list-titles">
-  <li>Name</li>
-  <li>Date</li>
-  <li>Ticketlink</li>
-  <li colspan="3"></li>
-</ul>
 
 
 <div class="row" data-equalizer>

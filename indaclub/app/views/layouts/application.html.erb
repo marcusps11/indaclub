@@ -13,15 +13,23 @@
   <%= csrf_meta_tags %>
 </head>
 
-  <body>
-<%=render "header" %>
+<body>
+  <div class="wrapper">
+    <%=render "header" %>
     <main class="row">
       <%= yield %>
+      
+      
     </main>
-
+    <div class="push"></div>
+  </div>
+  <div class="footer">
     <%=render "footer" %>
-  </body>
-  </html> 
+  </div>
+  
+
+</body>
+</html> 
 
 
 

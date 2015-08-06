@@ -69,8 +69,8 @@ h3 {
   width:30px
 }
 
-.wrapper {
-  margin-top: 50px
+.wrapper-img {
+  margin-top: 100px
 }
 
 #home_buttons  {
@@ -81,6 +81,31 @@ h3 {
 
 .image {
   margin-top: 50px;
+}
+
+html, body {
+height: 100%;
+}
+
+* {
+margin: 0;
+}
+
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+
+.footer, .push {
+height: 4em;
+
+}
+
+footer {
+  background-color: black;
+  width:100%;
 }
 
 
