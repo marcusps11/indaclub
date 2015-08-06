@@ -4,6 +4,7 @@
   <p><%= event.date %></p>
   <%= link_to 'Show', event %>
   <%= link_to 'Edit', edit_event_path(event) %>
+  <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 
   <% if current_user == event.user %>

@@ -37,11 +37,8 @@ a {
 }
 
 .home_logo {
-  height:500px;
-  text-align: center;
-  margin-top: 100px;
-  margin-left: 20%;
-  margin-right: 20%;
+ margin-top: 30px;
+
 
 }
 
@@ -58,13 +55,27 @@ h3 {
   text-align: center;
   font-weight: bold;
   font-family: "montreal";
-  font-size:40px;
+  font-size:30px;
 
 }
 
+.login input {
+  width:300px;
+  margin:0 auto;
+}
 
+.nav_image {
+  height:30px;
+  width:30px
+}
 
+.wrapper {
+  margin-top: 50px
+}
 
+.home_buttons {
+  margin-top: 30px;
+}
 
 
 

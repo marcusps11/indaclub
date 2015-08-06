@@ -14,7 +14,7 @@
         <li><%= link_to "Index", users_path %></li>
         <% end %>
         <li class="has-dropdown">
-          <a href=" ">Account</a>
+          <a href="#">Account</a>
           <ul class="dropdown">
             <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -32,6 +32,7 @@
       <!-- Left Nav Section -->
       <ul class="left">
       <li><%= link_to "Home", root_path %></li>
+      <li><%= image_tag "marcus_logo_white.png", class:"nav_image" %>
       </ul>
     </section>
   </nav>

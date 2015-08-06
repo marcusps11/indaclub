@@ -16,3 +16,19 @@
 //= require_tree .
 
 $(function() {$(document).foundation(); });
+
+
+$(function(){  
+
+  $('#submitButton').on("click", function(){
+    document.getElementById("submitButton").style.display='none'
+    $("#numberOfCode").attr("type", "hidden");
+
+    $("body").animate({
+        "scrollTop": $('.content').offset().top
+    }, 2000, function(){
+        // .setUp(size);
+    });
+  })   
+  
+}); 

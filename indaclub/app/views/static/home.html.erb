@@ -1,26 +1,18 @@
 <div class="row">
-        <div class="large-12 columns">
+<div class="wrapper">
+        <div class="large-6 columns">
+        <h6><strong>InDaClub</strong></h6>
+        <h3>See day by day updated listings of parties and DJs for the entire Summer</h3>
+        <div class="text-center" id="home_buttons_div">
+             <a href="/login" class="button" id="home_buttons">Login</a>
+             <a href="/users/new" class="button" id="home_buttons">Sign Up</a>
+           </div>
+        </div>
+        <div class="large-6 columns">
           <%= image_tag "marcus_logo_black.png", class:"home_logo" %>
         </div>
-     
-     
-<h6><strong>InDaClub</strong></h6>
-<h3>PLAN A TRIP TO YOU'LL REMEMBER</h3>
-
-
-
-<h1>LOGIN</h1>
- <%= form_tag sessions_path do %>
- <div class="field">
-   <%= label_tag :username %>
-   <%= text_field_tag :username, params[:username] %>
- </div>
- <div class="field">
-   <%= label_tag :password %>
-   <%= password_field_tag :password %>
- </div>
- <div class="actions"><%= submit_tag "Log in" %></div>
- <% end %>
+        </div>
+        
 
  </div>
 
