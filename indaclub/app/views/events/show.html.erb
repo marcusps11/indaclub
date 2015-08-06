@@ -1,8 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="image">
+  <div class="large-12 columns text-center">
+    <%= image_tag @event.event_image.detail %><br>
+  </div>
+</div>
+  </div>
 
 <p>
-  <b>Image:</b>
-  <%= image_tag @event.event_image.url %>
+  
+  
 </p>
 
 <p>
@@ -16,7 +22,7 @@
 </p>
 
 <p>
-  <strong>Buy Tickets:</strong>
+  <strong>Buy Tickets Here:</strong>
   <%= @event.ticketlink %>
 </p>
 
@@ -25,7 +31,7 @@
  <%= link_to @event.club.try(:name), @event.club %>
 </p>
 
-<%= link_to "Attending", like_event_path(@event), method: :put %> 
+<%= link_to "Attending?", like_event_path(@event), method: :put %> 
 
 
 <%= @event.score %>

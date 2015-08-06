@@ -79,7 +79,7 @@ class EventsController < ApplicationController
     def upvote
       @event = Event.find(params[:id])
       @event.upvote_by current_user
-      redirect_to events_path
+      redirect_to @event
     end
 
 
