@@ -3,6 +3,7 @@ gem 'httparty'
 gem 'pry'
 gem 'json'
 gem 'ransack'
+gem 'carrierwave', '0.10.0'
 
 gem 'foundation-rails'
 gem 'rails', '4.2.2'

@@ -1,8 +1,8 @@
-<ul>
-  <li><%= event.name %></li>
-  <li><%= event.date %></li>
-  <li><%= link_to 'Show', event %></li>
-  </ul>
+<div class="large-4 columns panel text-center" data-equalizer-watch>
+ <h4> <%= event.name %></h4>
+  <p><%= event.date %></p>
+  <%= link_to 'Show', event %>
+  </div>
 
   <% if current_user == event.user %>
   <li><%= link_to 'Edit', edit_event_path(event) %></li>

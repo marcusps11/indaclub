@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+
+
+ <h3> <%= image_tag @user.avatar %></h3>
+
+
+<h2>
+  <strong><%= @user.username %></strong>
+</h2>
 
 <p>
   <strong>Email:</strong>
@@ -15,17 +19,16 @@
   <%= @user.bio %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
+
 
 <strong>Events Attending:</strong>
+<ul>
 <% @user.find_voted_items.each do |item| %>
-  <%= link_to item.name, item %>
+  <li><%= link_to item.name, item %></li>
 <% end %>
-
-
+</ul>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+
+
 <%= link_to 'Back', users_path %>

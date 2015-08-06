@@ -63,6 +63,7 @@ end
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_club
@@ -71,6 +72,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:name, :location, :description, :image)
+      params.require(:club).permit(:name, :location, :description, :image, :club_image)
     end
 end

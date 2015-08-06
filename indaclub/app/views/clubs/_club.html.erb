@@ -3,7 +3,8 @@
 
   <%= club.name %>
   <%= link_to 'Show', club %>
-  <%= image_tag("http://www.ibizaworldclubtour.net/wp-content/uploads/dc10-logo.jpg") %>
+  <%= image_tag club.club_image.url %>
+
   
   </div>
   <% if current_user == club.user %>
