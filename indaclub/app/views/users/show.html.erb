@@ -1,37 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-10 columns text-center">
+    <hr>
+    <div class="row">
+      <div class="large-5 columns">      
+       <p> <%= image_tag @user.user_image.url %></p>
+       <h3><strong>Events Attending:</strong></h3>
+       <ul>
+        <% @user.find_voted_items.each do |item| %>
+        <li><%= link_to item.name, item %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="large-5 columns">
+      <h2><strong><%= @user.username %></strong></h2>
+
+      <p id="Yo"><%= notice %></p>
+       <h3> <strong><%= @user.email %></strong></h3>
+
+          <h3><strong>Bio:</strong></h3>
+          <strong><p><%= @user.bio %></p></strong>
+        </p>
+
+        <%= link_to 'Edit', edit_user_path(@user) %> |
 
 
-
-<p>
-
-   <%= image_tag @user.user_image.url %>
- </p>
-
-
-<h2>
-  <strong><%= @user.username %></strong>
-</h2>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
-
-
-
-<strong>Events Attending:</strong>
-<ul>
-<% @user.find_voted_items.each do |item| %>
-  <li><%= link_to item.name, item %></li>
-<% end %>
-</ul>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-
-
-<%= link_to 'Back', users_path %>
+        <%= link_to 'Back', users_path %>
+        </div>
+        </div>
+        </div>
+        </div>

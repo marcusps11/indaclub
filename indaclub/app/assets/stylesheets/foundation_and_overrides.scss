@@ -12,13 +12,13 @@
 //
 
 // This is the default html and body font-size for the base em value.
-// $em-base: 16px;
+$em-base: 100px;
 
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
 $body-font-family: "montreal";
-// $body-font-weight: normal;
+$body-font-weight: bold;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
