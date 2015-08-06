@@ -28,8 +28,24 @@
 </ul>
 
 <div class="row" data-equalizer>
- <%= render @clubs %>
+ <% @clubs.each do |club| %>
+  <div class="large-4 columns panel text-center" data-equalizer-watch>
+
+  <%= image_tag(club.club_image.thumb) %>
+    <%= club.name %>
+    <%= link_to 'Show', club %>
+
+    </div>
+    <% if current_user == club.user %>
+    <li><%= link_to 'Edit', edit_club_path(club) %></li>
+    <li><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+ <% end %>
+
  </div>
+
+
+
 
 
 <br>

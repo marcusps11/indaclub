@@ -16,4 +16,18 @@
 
 */
 
+@font-face {
+    font-family: "montreal";
+    src: url(fonts/Montreal-Serial-ExtraBold-Regular.ttf);
+}
 
+body {
+  width:100%;
+  height:100%;
+  background-image: url(image_path("background.png"));
+  font-family: "montreal";
+}
+
+h1 {
+  font-family: "montreal";
+}
