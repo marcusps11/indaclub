@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    redirect_to root_path unless authenticate_user(@event.user)
+
   end
 
   # POST /events
@@ -73,7 +73,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date, :ticketlink, :search)
+      params.require(:event).permit(:name, :date, :ticketlink, :search, :event_image)
     end
 
     def upvote

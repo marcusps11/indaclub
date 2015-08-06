@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag @event.event_image.url %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @event.name %>
 </p>
@@ -8,6 +13,11 @@
 <p>
   <strong>Date:</strong>
   <%= @event.date %>
+</p>
+
+<p>
+  <strong>Buy Tickets:</strong>
+  <%= @event.ticketlink %>
 </p>
 
 <p>
